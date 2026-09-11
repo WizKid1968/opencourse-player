@@ -33,6 +33,7 @@
  aside header{padding:1rem 1.1rem;border-bottom:1px solid var(--pl-line)}
  #courseTitle{font-weight:650;font-size:1rem;margin:0}
  aside .sub{color:var(--pl-dim);font-size:.78rem;margin:.15rem 0 0}
+ #build{opacity:.55}
  #scenes{list-style:none;margin:0;padding:.5rem;overflow:auto;flex:1}
  #scenes button{display:flex;gap:.6rem;align-items:center;width:100%;text-align:left;
    padding:.6rem .65rem;border:0;border-radius:9px;background:transparent;color:inherit;
@@ -83,7 +84,7 @@
   <aside>
     <header>
       <p id="courseTitle">Course</p>
-      <p class="sub">OpenCourse</p>
+      <p class="sub">OpenCourse <span id="build"></span></p>
     </header>
     <ul id="scenes"></ul>
   </aside>

@@ -467,6 +467,16 @@ const cssEsc = (s) => String(s).replace(/["\\]/g, '\\$&');
 
 const player = new Player();
 
+// Show which build is running. `package.mjs` fingerprints this script's URL, so
+// the query string is the build id — a screenshot then proves which version a
+// device actually loaded, instead of us inferring it from timing.
+{
+  const src = document.currentScript?.src || '';
+  const v = /[?&]v=([a-f0-9]+)/.exec(src)?.[1];
+  const el = $('#build');
+  if (el) el.textContent = v ? `build ${v}` : 'build dev';
+}
+
 async function open(file) {
   $('#drop').classList.add('busy');
   $('#dropText').textContent = 'Reading course…';
